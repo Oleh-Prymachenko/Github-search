@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export const SearchBar = ({ setSearchParam }) => {
   const hanldeSearch = (e) => {
@@ -16,4 +17,8 @@ export const SearchBar = ({ setSearchParam }) => {
       />
     </form>
   );
+};
+
+SearchBar.propTypes = {
+  setSearchParam: PropTypes.func.isRequired,
 };

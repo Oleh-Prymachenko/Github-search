@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export const SearchHistory = ({ history }) => {
   return (
@@ -17,4 +18,8 @@ export const SearchHistory = ({ history }) => {
       </ul>
     </div>
   );
+};
+
+SearchHistory.propTypes = {
+  history: PropTypes.arrayOf(PropTypes.string),
 };

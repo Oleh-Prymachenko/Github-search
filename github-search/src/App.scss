@@ -78,6 +78,11 @@ body {
         }
       }
     }
+    .response-status {
+      margin: auto;
+      font-size: x-large;
+      color: coral;
+    }
     .repos {
       @include flexbox(row, space-evenly, none);
       flex-wrap: wrap;
