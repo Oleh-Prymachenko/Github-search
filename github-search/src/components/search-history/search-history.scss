@@ -1,0 +1,10 @@
+.history {
+  .history-list {
+    .history-item + .history-item {
+      margin-top: 1%;
+    }
+    .history-item {
+      list-style-type: none;
+    }
+  }
+}

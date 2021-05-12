@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import "./search-history.scss";
+
 export const SearchHistory = ({ history }) => {
   return (
     <div className="history">

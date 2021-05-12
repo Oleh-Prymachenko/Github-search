@@ -1,0 +1,62 @@
+@import "../../mixin/flexbox.scss";
+
+.repos {
+  @include flexbox(row, space-evenly, none);
+  flex-wrap: wrap;
+  margin-left: 3%;
+  .repos-list {
+    @include flexbox(row, space-evenly, none);
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+    // .repos-card + .repos-card {
+    //   margin: 2%;
+    // }
+    .repos-card {
+      background-color: white;
+      width: 43%;
+      height: auto;
+      border-radius: 20px;
+      padding: 2%;
+      margin: 1%;
+      // margin-right: -2%;
+      .card-name {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+      .card-language {
+      }
+      .card-description {
+      }
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .repos {
+    .repos-list {
+      .repos-card {
+        background-color: white;
+        width: 43%;
+        height: auto;
+        border-radius: 20px;
+        padding: 2%;
+        margin: 1%;
+        .card-name {
+          text-decoration: none;
+          color: black;
+          font-weight: bold;
+          font-size: medium;
+        }
+        .card-language {
+          font-size: small;
+        }
+        .card-description {
+          font-size: small;
+        }
+      }
+    }
+  }
+}

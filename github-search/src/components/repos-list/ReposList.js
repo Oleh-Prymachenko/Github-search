@@ -1,11 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Loader from "react-loader-spinner";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
-export const ListOfRepos = ({ status, data }) => {
-  if (status === "fetching")
-    return <p className="response-status">Fetching :(</p>;
+import useRepos from "../../apiHooks/useReposList";
+
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import "./repos-list.scss";
+
+export const ReposList = ({ searchParam }) => {
+  const { status, data } = useRepos(searchParam);
+
+  if (status === "fetching") return <p className="response-status">Fetching</p>;
   if (status === "loading")
     return (
       <Loader
@@ -44,7 +49,8 @@ export const ListOfRepos = ({ status, data }) => {
   );
 };
 
-ListOfRepos.propTypes = {
+ReposList.propTypes = {
   data: PropTypes.object,
-  status: PropTypes.string.isRequired,
+  status: PropTypes.string,
+  searchParam: PropTypes.string.isRequired,
 };

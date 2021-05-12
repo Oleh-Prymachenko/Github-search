@@ -1,24 +1,20 @@
 import React, { useState, useEffect } from "react";
 import useLocalStorageState from "use-local-storage-state";
 import { ReactQueryDevtools } from "react-query/devtools";
-import PropTypes from "prop-types";
 
-import { ListOfRepos } from "./components/ListOfRepos";
-import { SearchBar } from "./components/SearchBar";
-import { SearchHistory } from "./components/SearchHistory";
-import useRepos from "./apiHooks/useReposList";
+import { ReposList } from "./components/repos-list/ReposList";
+import { SearchBar } from "./components/search-bar/SearchBar";
+import { SearchHistory } from "./components/search-history/SearchHistory";
+
 import "./App.scss";
 
 function App() {
   const [searchParam, setSearchParam] = useState("React");
   const [history, setHistory] = useLocalStorageState("history", []);
 
-  const { status, data } = useRepos(searchParam);
-
   useEffect(() => {
-    console.log(data);
-    console.log(status);
     setHistory([...history, searchParam]);
+    // eslint-disable-next-line
   }, [searchParam]);
 
   return (
@@ -37,18 +33,13 @@ function App() {
       <main className="App-main">
         <aside className="search">
           <SearchBar setSearchParam={setSearchParam} />
-
           <SearchHistory history={history} />
         </aside>
-        <ListOfRepos status={status} data={data} />
+        <ReposList searchParam={searchParam} />
       </main>
       <ReactQueryDevtools initialIsOpen />
     </div>
   );
 }
-
-App.propTypes = {
-  searchParam: PropTypes.array,
-};
 
 export default App;

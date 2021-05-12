@@ -26,7 +26,7 @@ body {
         }
         .title-description {
           // letter-spacing: 0.2;
-          font-size: larger;
+          font-size: large;
           font-weight: lighter;
         }
       }
@@ -53,67 +53,43 @@ body {
       .search-form + .history {
         margin-top: 10%;
       }
-      .search-form {
-        .search-input {
-          font-size: 20px;
-          padding: 3%;
-          padding-left: 10%;
-          border: none;
-          border-bottom: 1px solid #ccc;
-          border-radius: 15px;
-          outline: none;
-          &:focus {
-            border-bottom: 1px solid #111;
-          }
-        }
-      }
-      .history {
-        .history-list {
-          .history-item + .history-item {
-            margin-top: 1%;
-          }
-          .history-item {
-            list-style-type: none;
-          }
-        }
-      }
     }
     .response-status {
       margin: auto;
       font-size: x-large;
       color: coral;
     }
-    .repos {
-      @include flexbox(row, space-evenly, none);
-      flex-wrap: wrap;
-      margin-left: 3%;
-      .repos-list {
-        @include flexbox(row, space-evenly, none);
-        flex-wrap: wrap;
-        list-style: none;
-        margin: 0;
-        padding: 1rem;
-        // .repos-card + .repos-card {
-        //   margin: 2%;
-        // }
-        .repos-card {
-          background-color: white;
-          width: 43%;
-          height: auto;
-          border-radius: 20px;
-          padding: 2%;
-          margin: 1%;
-          // margin-right: -2%;
-          .card-name {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .App {
+    padding: 0.5% 3.5% 0.2% 2%;
+    .App-header {
+      .logo {
+        .logo-image {
+          font-size: x-large;
+        }
+        .logo-title {
+          .title-name {
+            font-size: xx-large;
           }
-          .card-language {
-          }
-          .card-description {
+          .title-description {
+            font-size: small;
           }
         }
+      }
+      .app-name {
+        font-size: large;
+      }
+    }
+    .line {
+    }
+    .App-main {
+      .search {
+      }
+      .response-status {
+        font-size: x-large;
       }
     }
   }
